@@ -3,12 +3,11 @@
 export interface Props {
   href: string;
   text: string;
-  className?: string; // Prop opcional para clases adicionales
+  className?: string; 
 }
 
 const { href, text, className } = Astro.props;
 
-// Clases base que replican el estilo del botón "Ver todo"
 const baseClasses = `
   inline-block 
   px-10 py-3 
