@@ -1,0 +1,28 @@
+---
+// Button.astro
+export interface Props {
+  href: string;
+  text: string;
+  className?: string; // Prop opcional para clases adicionales
+}
+
+const { href, text, className } = Astro.props;
+
+// Clases base que replican el estilo del botón "Ver todo"
+const baseClasses = `
+  inline-block 
+  px-10 py-3 
+  bg-[#DCC24C] text-header-bg 
+  font-body font-bold text-lg uppercase tracking-wide
+  rounded-full 
+  shadow-[0_0_20px_rgba(220,194,76,0.6)] 
+  hover:shadow-[0_0_35px_rgba(220,194,76,0.8)] 
+  hover:scale-105 
+  transition-all duration-300
+  ${className ?? ''}
+`;
+---
+
+<a href={href} class={baseClasses}>
+  {text}
+</a>
